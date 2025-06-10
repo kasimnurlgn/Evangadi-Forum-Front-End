@@ -1,10 +1,11 @@
 import React from "react";
 import Layout from "./pages/Layout/Layout";
-import { Router, Routes } from "react-router-dom";
+import { Route, Routes } from "react-router-dom";
+
 function AppRouter() {
   return (
     <Routes>
-      <Router path="/" element={<Layout/>} />
+      <Route path="/" element={<Layout />} />
     </Routes>
   );
 }
