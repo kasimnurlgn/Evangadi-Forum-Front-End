@@ -31,7 +31,7 @@ const Header = () => {
       </div>
       {/* Menu icon for mobile */}
       <div className={classes.header__menu_icon} onClick={toggleSidebar}>
-        <AiOutlineMenu />
+        <AiOutlineMenu color="orange" />
       </div>
       <div className={classes.header__right}>
         {/* Navigation Links */}
@@ -56,7 +56,7 @@ const Header = () => {
         <div className={classes.header__sidebar}>
           <span className={classes.header__close_icon} onClick={toggleSidebar}>
             {/* Close (X) icon */}
-            <IoMdClose />
+            <IoMdClose color="orange" />
           </span>
           <nav className={classes.header__nav}>
             <a href="/" onClick={toggleSidebar}>
