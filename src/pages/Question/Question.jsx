@@ -1,8 +1,8 @@
 import React, { useRef, useState } from "react";
-import classes from "./question.module.css";
+import classes from "./Question.module.css";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faCircleDown } from "@fortawesome/free-solid-svg-icons";
-import instance from "../../api/axios" ;
+import instance from "../../api/axios";
 import { ClipLoader } from "react-spinners";
 
 const Question = () => {
