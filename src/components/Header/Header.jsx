@@ -1,6 +1,6 @@
-import React, { useContext, useEffect, useState } from "react";
+import React, { useEffect, useState } from "react";
 import classes from "./Header.module.css";
-import evangadiLogo from "../../assets/images/headerLogo.png";
+import headerLogo from "../../assets/headerLogo.png";
 import { AiOutlineMenu } from "react-icons/ai";
 import { IoMdClose } from "react-icons/io";
 import { Link, Navigate, useNavigate } from "react-router-dom";
@@ -26,7 +26,7 @@ const Header = () => {
       {/* Logo */}
       <div className={classes.header__logo}>
         <Link to="/">
-          <img src={evangadiLogo} alt="Evangadi Logo" />
+          <img src={headerLogo} alt="Evangadi header logo" />
         </Link>
       </div>
       {/* Menu icon for mobile */}
