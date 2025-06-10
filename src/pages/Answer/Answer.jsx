@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
-import classes from "../Answer/answer.module.css";
+import classes from "./Answer.module.css";
 import { IoMdContact } from "react-icons/io";
-import instance from "../../Api/axios";
+import instance from "../../api/axios";
 import { useParams } from "react-router-dom";
 import Loader from "../../components/Loader/Loader";
 function Answer() {

@@ -5,23 +5,23 @@ import { useContext, useRef, useState } from "react";
 import { AppContext } from "../DataContext/DataContext";
 import { BiHide, BiShow } from "react-icons/bi";
 import { ClipLoader } from "react-spinners";
+
 function Login({ visible }) {
   const { setShow } = visible;
   const emailRef = useRef();
   const passwordRef = useRef();
   const [errorMessage, setErrorMessage] = useState("");
-  const [password, setPassword] = useState("");
   const [showPassword, setShowPassword] = useState(false);
   const [isLoading, setIsLoading] = useState(false);
   const navigate = useNavigate();
   const { user, setUser } = useContext(AppContext);
+
   async function handleSubmit(e) {
     e.preventDefault();
     setIsLoading(true);
     const emailValue = emailRef.current.value.trim();
     const passwordValue = passwordRef.current.value;
 
-    // Form validation
     if (!emailValue || !passwordValue) {
       setErrorMessage("Please provide all required information.");
       setIsLoading(false);
@@ -29,13 +29,19 @@ function Login({ visible }) {
     }
 
     try {
-      const response = await instance.post("/users/login", {
+      const loginResponse = await instance.post("/users/login", {
         email: emailValue,
         password: passwordValue,
       });
-      if (response.status === 200) {
-        localStorage.setItem("token", response.data.token);
-        setUser(response.data.username);
+      if (loginResponse.status === 200) {
+        const token = loginResponse.data.token;
+        localStorage.setItem("token", token);
+
+        // Manually set Authorization header for /users/check
+        const checkResponse = await instance.get("/users/check", {
+          headers: { Authorization: `Bearer ${token}` },
+        });
+        setUser(checkResponse.data.username); // Adjust based on actual response
         navigate("/");
       }
     } catch (error) {
@@ -48,6 +54,7 @@ function Login({ visible }) {
       }
     }
   }
+
   const togglePasswordVisibility = () => {
     setShowPassword(!showPassword);
   };
@@ -62,7 +69,6 @@ function Login({ visible }) {
       {errorMessage && <p className={classes.error_message}>{errorMessage}</p>}
       <form onSubmit={handleSubmit} className={classes.signIn_form}>
         <div className={classes.label_in}>
-          {/* <label>Email: </label> */}
           <input
             ref={emailRef}
             type="email"
@@ -75,8 +81,6 @@ function Login({ visible }) {
               ref={passwordRef}
               placeholder="Enter your password"
               type={showPassword ? "text" : "password"}
-              value={password}
-              onChange={(e) => setPassword(e.target.value)}
               required
             />
             <button
