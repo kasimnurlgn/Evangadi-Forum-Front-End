@@ -2,7 +2,7 @@ import { Link, useNavigate } from "react-router-dom";
 import instance from "../../api/axios";
 import classes from "./Login.module.css";
 import { useContext, useRef, useState } from "react";
-import { AppState } from "../../context/DataContext";
+import { AppContext } from "../DataContext/DataContext";
 import { BiHide, BiShow } from "react-icons/bi";
 import { ClipLoader } from "react-spinners";
 function Login({ visible }) {
@@ -14,7 +14,7 @@ function Login({ visible }) {
   const [showPassword, setShowPassword] = useState(false);
   const [isLoading, setIsLoading] = useState(false);
   const navigate = useNavigate();
-  const { user, setUser } = useContext(AppState);
+  const { user, setUser } = useContext(AppContext);
   async function handleSubmit(e) {
     e.preventDefault();
     setIsLoading(true);
