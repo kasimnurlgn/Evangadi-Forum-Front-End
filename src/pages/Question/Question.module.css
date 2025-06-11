@@ -15,7 +15,7 @@
   line-height: 2;
   margin-left: 25px;
 }
-form > input,
+.post_question_container form > input,
 textarea {
   font-family: "Roboto Mono", monospace;
   font-size: 20px;
