@@ -1,16 +1,72 @@
-.HowItWorks__container {
-  width: 80%;
-  padding: 20px;
-  padding-top: 100px;
-  margin: 0 auto;
-}
 
-.HowItWorks__container h1 {
-  text-align: center;
-}
-
-.HowItWorks__container p {
-  padding: 15px;
-  line-height: 1.5;
-  text-align: justify;
-}
+.howto_container {
+    max-width: 800px;
+    margin: 40px auto;
+    padding: 20px 30px;
+    background-color: #fdfdfd;
+    border-radius: 10px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+  }
+  
+  .howto_title {
+    text-align: center;
+    font-size: 32px;
+    margin-bottom: 30px;
+    color: #007bff;
+  }
+  
+  .howto_section {
+    margin-bottom: 30px;
+  }
+  
+  .howto_section h2 {
+    font-size: 24px;
+    margin-bottom: 10px;
+    color: #333;
+    text-align: left;
+  }
+  
+  .howto_section p {
+    font-size: 16px;
+    line-height: 1.6;
+    color: #555;
+  }
+  
+  .howto_section ol,
+  .howto_section ul {
+    margin-left: 20px;
+    margin-top: 10px;
+  }
+  
+  .howto_section ol li,
+  .howto_section ul li {
+    margin-bottom: 10px;
+    font-size: 16px;
+    color: #555;
+  }
+  
+  .howto_section ol li::marker,
+  .howto_section ul li::marker {
+    color: #007bff; /* Change marker color */
+  }
+  
+  @media screen and (max-width: 800px) {
+    .howto_container {
+      margin: 20px;
+      padding: 15px 20px;
+    }
+  
+    .howto_title {
+      font-size: 28px;
+    }
+  
+    .howto_section h2 {
+      font-size: 20px;
+    }
+  
+    .howto_section p,
+    .howto_section ol li,
+    .howto_section ul li {
+      font-size: 14px;
+    }
+  }
