@@ -1,63 +1,81 @@
-import instance from "../../api/axios";
 import React, { useContext, useEffect, useState } from "react";
 import { AppContext } from "../../components/DataContext/DataContext";
 import { IoMdContact, IoIosArrowForward } from "react-icons/io";
-import { Link, useNavigate } from "react-router-dom";
+import { Link, useNavigate, useLocation } from "react-router-dom";
 import Loader from "../../components/Loader/Loader";
+import instance from "../../api/axios";
 import classes from "./Home.module.css";
+
 function Home() {
   const { user, setUser } = useContext(AppContext);
   const token = localStorage.getItem("token");
-  const [questions, setquestions] = useState([]);
-  const [isloading, setIsLoading] = useState(false);
+  const [questions, setQuestions] = useState([]);
+  const [isLoading, setIsLoading] = useState(false);
   const [searchItem, setSearchItem] = useState("");
-  const [filteredQuestions, setFilteredQuestions] = useState(questions);
+  const [filteredQuestions, setFilteredQuestions] = useState([]);
   const navigate = useNavigate();
-  async function Loadquestions() {
+  const location = useLocation(); // Get navigation state
+
+  async function loadQuestions() {
     try {
+      setIsLoading(true);
       const { data } = await instance.get("/questions", {
-        headers: {
-          authorization: "Bearer " + token,
-        },
+        headers: { Authorization: "Bearer " + token },
       });
-      //   console.log(data);
+      setQuestions(data || []);
       setIsLoading(false);
-      setquestions(() => data.questions);
     } catch (error) {
       setIsLoading(false);
-      console.log(error);
+      console.error("Error loading questions:", error);
       navigate("/login");
     }
   }
-  async function checkuser() {
+
+  async function checkUser() {
     try {
       const { data } = await instance.get("/users/check", {
-        headers: {
-          authorization: "Bearer " + token,
-        },
+        headers: { Authorization: "Bearer " + token },
       });
-      // console.log(data);
       setUser(data.username);
-      navigate("/");
     } catch (error) {
-      console.log(error);
+      console.error("Error checking user:", error);
       navigate("/login");
     }
   }
+
   useEffect(() => {
     setIsLoading(true);
-    checkuser();
-    Loadquestions();
+    checkUser();
+    loadQuestions();
   }, []);
+
   useEffect(() => {
-    const filtered = questions?.filter((question) =>
+    // Add new question from state if it exists
+    if (location.state?.newQuestion) {
+      setQuestions((prev) => {
+        // Avoid duplicates by checking question_id
+        if (
+          prev.some(
+            (q) => q.question_id === location.state.newQuestion.question_id
+          )
+        ) {
+          return prev;
+        }
+        return [location.state.newQuestion, ...prev];
+      });
+    }
+  }, [location.state]);
+
+  useEffect(() => {
+    const filtered = questions.filter((question) =>
       question.title.toLowerCase().includes(searchItem.toLowerCase())
     );
     setFilteredQuestions(filtered);
   }, [searchItem, questions]);
+
   return (
     <>
-      {isloading ? (
+      {isLoading ? (
         <Loader />
       ) : (
         <section className={classes.home__container}>
@@ -67,7 +85,7 @@ function Home() {
             </div>
             <div style={{ fontSize: "20px", fontWeight: "600" }}>
               <p>
-                Welcom,<span style={{ color: "orange" }}>{user}!</span>
+                Welcome, <span style={{ color: "orange" }}>{user}!</span>
               </p>
             </div>
           </div>
@@ -88,38 +106,40 @@ function Home() {
             </div>
           </div>
           <div>
-            {filteredQuestions?.map((question, i) => {
-              return (
-                <div className={classes.question__outercontainer} key={i}>
+            {filteredQuestions.length > 0 ? (
+              filteredQuestions.map((question, i) => (
+                <div
+                  className={classes.question__outercontainer}
+                  key={question.question_id || i}
+                >
                   <hr />
                   <div className={classes.home__questioncontainer}>
                     <div className={classes.home__iconandusernamecontainer}>
                       <div>
-                        <div>
-                          <IoMdContact size={80} />
-                        </div>
-                        <div className={classes.home__questionusename}>
-                          {" "}
-                          <p>{question?.user_name}</p>
+                        <IoMdContact size={80} />
+                        <div className={classes.home__questionusername}>
+                          <h3>{question.username}</h3>{" "}
+                          {/* Changed from user_name to username */}
                         </div>
                       </div>
                       <div className={classes.home__questiontitle}>
-                        <p>{question?.title}</p>
+                        <p>{question.title}</p>
                       </div>
                     </div>
                     <div style={{ marginTop: "30px" }}>
-                      {" "}
                       <Link to={`/home/answers/${question.question_id}`}>
-                        {" "}
-                        <IoIosArrowForward size={30} color="black">
-                          {" "}
-                        </IoIosArrowForward>
+                        <IoIosArrowForward
+                          size={30}
+                          className={classes.arrow_icon}
+                        />
                       </Link>
                     </div>
                   </div>
                 </div>
-              );
-            })}
+              ))
+            ) : (
+              <p>No questions found.</p>
+            )}
           </div>
         </section>
       )}

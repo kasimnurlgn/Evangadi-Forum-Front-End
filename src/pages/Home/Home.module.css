@@ -52,8 +52,15 @@ div,
   vertical-align: middle;
   margin-top: 30px;
   margin-left: 30px;
+  font-size: 18px;
 }
 
-.home__questionusename {
+.home__questionusername {
   text-align: center;
+}
+.arrow_icon {
+  color: black;
+}
+.arrow_icon:hover {
+  color: orange;
 }
