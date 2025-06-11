@@ -5,14 +5,16 @@ import { Route, Routes } from "react-router-dom";
 import Home from "./pages/Home/Home";
 import Question from "./pages/Question/Question";
 import Answer from "./pages/Answer/Answer";
+import HowItWorks from "./pages/HowItWorks/HowItWorks";
 function AppRouter() {
   return (
     <Routes>
       <Route path="/" element={<Layout />}>
         <Route path="/" element={<Home />} />
         <Route path="/login" element={<Landing />} />
-        <Route path="/question" element={<Question />} />
+        <Route path="/questions" element={<Question />} />
         <Route path="/home/answers/:questionId" element={<Answer />} />
+        <Route path="/how-it-works" element={<HowItWorks />} />
       </Route>
     </Routes>
   );

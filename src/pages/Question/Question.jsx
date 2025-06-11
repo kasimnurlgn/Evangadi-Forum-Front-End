@@ -31,7 +31,7 @@ const Question = () => {
 
     try {
       await instance.post(
-        "/question",
+        "/questions",
         { title, description },
         { headers: { Authorization: "Bearer " + token } }
       );

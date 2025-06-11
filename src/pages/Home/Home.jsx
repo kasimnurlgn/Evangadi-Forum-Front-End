@@ -15,7 +15,7 @@ function Home() {
   const navigate = useNavigate();
   async function Loadquestions() {
     try {
-      const { data } = await instance.get("/question", {
+      const { data } = await instance.get("/questions", {
         headers: {
           authorization: "Bearer " + token,
         },
@@ -63,7 +63,7 @@ function Home() {
         <section className={classes.home__container}>
           <div className={classes.home__topcontainer}>
             <div>
-              <Link to="/question">Ask Question</Link>
+              <Link to="/questions">Ask Question</Link>
             </div>
             <div style={{ fontSize: "20px", fontWeight: "300" }}>
               <p>
@@ -78,13 +78,12 @@ function Home() {
               marginBottom: "20px",
             }}
           >
-            Questions
             <div className={classes.search}>
               <input
                 type="text"
                 value={searchItem}
-                onChange={(e) => setSearchItem(e.target.value)}
-                placeholder="Search questions..."
+                  onChange={(e) => setSearchItem(e.target.value)}
+                placeholder="Search question"
               />
             </div>
           </div>
