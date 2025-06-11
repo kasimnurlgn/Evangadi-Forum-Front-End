@@ -4,6 +4,7 @@ import { LuFacebook } from "react-icons/lu";
 import { AiOutlineYoutube } from "react-icons/ai";
 import { FaInstagram } from "react-icons/fa";
 import footerLogo from "../../assets/footerLogo.png";
+import { Link } from "react-router-dom";
 
 function Footer() {
   return (
@@ -12,38 +13,38 @@ function Footer() {
         <div className={classes.footer_inner_container}>
           <div className={classes.first_section}>
             <div className={classes.logo_wrapper}>
-              <a href="/">
+              <Link to="/">
                 <img src={footerLogo} alt="Footer logo" />
-              </a>
+              </Link>
             </div>
 
             <ul className={classes.footer_icons}>
               <li>
-                <a
-                  href="https://www.facebook.com/evangaditech"
+                <Link
+                  to="https://www.facebook.com/evangaditech"
                   target="_blank"
                   rel="noopener noreferrer"
                 >
                   <LuFacebook />
-                </a>
+                </Link>
               </li>
               <li>
-                <a
-                  href="https://www.instagram.com/evangaditech/"
+                <Link
+                  to="https://www.instagram.com/evangaditech/"
                   target="_blank"
                   rel="noopener noreferrer"
                 >
                   <FaInstagram />
-                </a>
+                </Link>
               </li>
               <li>
-                <a
-                  href="https://www.youtube.com/@EvangadiTech"
+                <Link
+                  to="https://www.youtube.com/@EvangadiTech"
                   target="_blank"
                   rel="noopener noreferrer"
                 >
                   <AiOutlineYoutube />
-                </a>
+                </Link>
               </li>
             </ul>
           </div>

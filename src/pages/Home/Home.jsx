@@ -65,9 +65,9 @@ function Home() {
             <div>
               <Link to="/questions">Ask Question</Link>
             </div>
-            <div style={{ fontSize: "20px", fontWeight: "300" }}>
+            <div style={{ fontSize: "20px", fontWeight: "600" }}>
               <p>
-                WELCOME:<span style={{ color: " #DA7229" }}>{user}</span>
+                WELCOME:<span style={{ color: "orange" }}>{user}</span>
               </p>
             </div>
           </div>
@@ -82,7 +82,7 @@ function Home() {
               <input
                 type="text"
                 value={searchItem}
-                  onChange={(e) => setSearchItem(e.target.value)}
+                onChange={(e) => setSearchItem(e.target.value)}
                 placeholder="Search question"
               />
             </div>

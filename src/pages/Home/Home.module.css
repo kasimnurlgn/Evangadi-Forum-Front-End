@@ -6,7 +6,9 @@
   margin: 0 auto;
   margin-top: 75px;
 }
-.home__container p, div, .search input {
+.home__container p,
+div,
+.search input {
   font-family: "Roboto Mono", monospace;
 }
 .search {
@@ -26,6 +28,10 @@
   background-color: #516bf3;
   padding: 10px 10px;
   border-radius: 5px;
+  font-weight: 600;
+}
+.home__topcontainer a:hover {
+  background-color: orange;
 }
 
 .home__questioncontainer {
