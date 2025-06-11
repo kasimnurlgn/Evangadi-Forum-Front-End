@@ -35,10 +35,10 @@ const Header = () => {
       </div>
       <div className={classes.header__right}>
         {/* Navigation Links */}
-        <nav className={classes.header__nav}>
+        <div className={classes.header__nav}>
           <Link to="/">Home</Link>
           <Link to="/how-it-works">How it works</Link>
-        </nav>
+        </div>
 
         {/* Sign-in Button */}
         {isAuthenticated ? (
@@ -58,14 +58,14 @@ const Header = () => {
             {/* Close (X) icon */}
             <IoMdClose color="orange" />
           </span>
-          <nav className={classes.header__nav}>
-            <a href="/" onClick={toggleSidebar}>
+          <div className={classes.header__nav}>
+            <Link to="/" onClick={toggleSidebar}>
               Home
-            </a>
-            <a href="/how-it-works" onClick={toggleSidebar}>
+            </Link>
+            <Link to="/how-it-works" onClick={toggleSidebar}>
               How it works
-            </a>
-          </nav>
+            </Link>
+          </div>
           {isAuthenticated ? (
             <button className={classes.header__signin} onClick={signOut}>
               SIGN OUT
