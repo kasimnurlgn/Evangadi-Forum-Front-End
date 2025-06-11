@@ -6,6 +6,7 @@ import Home from "./pages/Home/Home";
 import Question from "./pages/Question/Question";
 import Answer from "./pages/Answer/Answer";
 import HowItWorks from "./pages/HowItWorks/HowItWorks";
+import NotFound from "./pages/NotFound/NotFound";
 function AppRouter() {
   return (
     <Routes>
@@ -15,6 +16,7 @@ function AppRouter() {
         <Route path="/questions" element={<Question />} />
         <Route path="/home/answers/:questionId" element={<Answer />} />
         <Route path="/how-it-works" element={<HowItWorks />} />
+        <Route path="*" element={<NotFound />} />
       </Route>
     </Routes>
   );

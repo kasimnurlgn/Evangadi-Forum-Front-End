@@ -1,5 +1,3 @@
-// src/components/HowToUse/HowToUse.jsx
-
 import React from "react";
 import classes from "./HowItWorks.module.css";
 
