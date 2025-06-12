@@ -12,12 +12,14 @@
 h2 {
   text-align: center;
   color: #333;
-  margin-bottom: 20px;
+  margin-bottom: 15px;
+  margin-top: 20px;
+  font-family: "Poppins", sans-serif !important;
 }
-
-form {
+.signup_container form {
   display: flex;
   flex-direction: column;
+  font-family: "Poppins", sans-serif !important;
 }
 
 div {
@@ -74,7 +76,9 @@ button:hover {
 
 .login_link {
   text-align: center;
-  margin-top: 15px;
+  margin-top: 5px;
+  margin-bottom: 25px;
+  font-family: "Poppins", sans-serif;
 }
 
 .login_link a {

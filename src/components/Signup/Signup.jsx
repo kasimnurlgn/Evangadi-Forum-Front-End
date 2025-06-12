@@ -133,12 +133,14 @@ const SignUp = ({ visible }) => {
         <div className={Classes.paragrap}>
           <p>
             I agree to the
-            <Link href="https://www.evangadi.com/legal/privacy/">
+            <Link to="https://www.evangadi.com/legal/privacy">
               {" "}
               privacy policy{" "}
             </Link>
             and{" "}
-            <a href="https://www.evangadi.com/legal/terms/">terms of service</a>
+            <Link to="https://www.evangadi.com/legal/terms/">
+              terms of service
+            </Link>
             .
           </p>
         </div>
