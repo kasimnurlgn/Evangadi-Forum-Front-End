@@ -6,11 +6,11 @@ const About = () => {
     <section className={classes.outer_about_wrapper}>
       <section className={classes.about_container}>
         <div className={classes.about}>
-          <p className={classes.about_title}>About</p>
+          <h3 className={classes.about_title}>About</h3>
         </div>
         {/* title container  */}
         <div>
-          <h1>Evangadi Networks Q&A</h1>
+          <h1>Evangadi Networks</h1>
         </div>
         {/* paragraph container  */}
         <div className={classes.about__detail}>
