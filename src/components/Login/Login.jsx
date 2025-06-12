@@ -64,7 +64,7 @@ function Login({ visible }) {
       <h1>Login to your account</h1>
       <p>
         Don't have an account?
-        <Link onClick={() => setShow(true)}>Create a new account?</Link>
+        <Link onClick={() => setShow(true)}> Create a new account</Link>
       </p>
       {errorMessage && <p className={classes.error_message}>{errorMessage}</p>}
       <form onSubmit={handleSubmit} className={classes.signIn_form}>
@@ -72,14 +72,14 @@ function Login({ visible }) {
           <input
             ref={emailRef}
             type="email"
-            placeholder="Enter your email"
+            placeholder="Email address"
             required
           />
           <div className={classes.password_field}>
             <input
               size="65"
               ref={passwordRef}
-              placeholder="Enter your password"
+              placeholder="Password"
               type={showPassword ? "text" : "password"}
               required
             />
@@ -103,7 +103,7 @@ function Login({ visible }) {
           </Link>
         </p>
         <button className={classes.submit} type="submit">
-          {isLoading ? <ClipLoader size={12} color="gray" /> : "Sign In"}
+          {isLoading ? <ClipLoader size={12} color="gray" /> : "Login"}
         </button>
       </form>
     </section>
