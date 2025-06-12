@@ -52,18 +52,58 @@ function Footer() {
           <div className={classes.second_section}>
             <h3>Useful Links</h3>
             <ul className={classes.lists}>
-              <li>How it works</li>
-              <li>Terms of Service</li>
-              <li>Privacy Policy</li>
+              <li>
+                <Link
+                  to="/how-it-works"
+                  aria-label="Learn how Evangadi Networks works"
+                >
+                  How it works
+                </Link>
+              </li>
+              <li>
+                <a
+                  href="https://www.evangadi.com/terms"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label="View Terms of Service"
+                >
+                  Terms of Service
+                </a>
+              </li>
+              <li>
+                <a
+                  href="https://www.evangadi.com/privacy"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label="View Privacy Policy"
+                >
+                  Privacy Policy
+                </a>
+              </li>
             </ul>
           </div>
 
           <div className={classes.third_section}>
             <h3>Contact Info</h3>
             <ul className={classes.lists}>
-              <li>Evangadi Networks</li>
-              <li>support@evangadi.com</li>
-              <li>+1-202-386-2702</li>
+              <li>
+                <Link to="/" aria-label="Visit Evangadi Networks homepage">
+                  Evangadi Networks
+                </Link>
+              </li>
+              <li>
+                <a
+                  href="mailto:support@evangadi.com"
+                  aria-label="Email support at Evangadi"
+                >
+                  support@evangadi.com
+                </a>
+              </li>
+              <li>
+                <a href="tel:+12023862702" aria-label="Call Evangadi support">
+                  +1-202-386-2702
+                </a>
+              </li>
             </ul>
           </div>
         </div>
