@@ -1,69 +1,15 @@
-/* body h2,
-h3,
-p {
-  font-family: "Roboto Mono", monospace;
-} */
-
-header {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  background-color: #fff;
-  padding: 10px 350px;
-  /* Adjust padding for better spacing */
-  border-bottom: 1px solid #ccc;
-}
-
-.username {
-  padding-left: 25px;
-}
-
-header .logo {
-  display: flex;
-  align-items: center;
-}
-
-header .logo img {
-  width: 150px;
-  /* Adjust logo size */
-}
-
-nav {
-  display: flex;
-  align-items: center;
-}
-
-nav a {
-  margin-right: 30px;
-  text-decoration: none;
-  color: #000;
-  font-size: 18px;
-  /* Increase font size for links */
-}
-
-.logout_btn {
-  padding: 10px 50px;
-  background-color: #4a90e2;
-  color: #fff;
-  border: none;
-  border-radius: 5px;
-  /* Rounded corners */
-  font-size: 16px;
-  cursor: pointer;
-  transition: background-color 0.3s;
-}
-
-.logout_btn:hover {
-  background-color: #357abd;
-  /* Darker shade on hover */
-}
-
 main {
   padding: 20px;
   max-width: 900px;
   margin: 20px auto;
+  font-family: "Roboto Mono", monospace;
 }
 
+main h2,
+h3,
+p {
+  font-family: "Roboto Mono", monospace;
+}
 .question_section {
   margin-top: 65px;
 }
@@ -78,6 +24,7 @@ main {
 .answer_form h2,
 .answer_form p {
   text-align: center;
+  font-size: 20px;
 }
 
 .answer_form p {
@@ -85,7 +32,7 @@ main {
   margin-bottom: 10px;
 }
 
-.question_section h3 {
+.question_section h3, p {
   font-size: 20px;
   color: #333;
 }

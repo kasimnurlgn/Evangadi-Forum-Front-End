@@ -6,12 +6,12 @@
   border-radius: 10px;
   box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
 }
-/* .howto_container p,
+.howto_container p,
 h2,
 h1,
 ul > li {
   font-family: "Roboto Mono", monospace;
-} */
+}
 .howto_title {
   text-align: center;
   font-size: 32px;
