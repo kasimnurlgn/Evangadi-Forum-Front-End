@@ -1,19 +1,32 @@
 import React from "react";
 import classes from "./HowItWorks.module.css";
-
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faUserPlus } from "@fortawesome/free-solid-svg-icons";
+import { faKey } from "@fortawesome/free-solid-svg-icons";
+import { faCircleQuestion } from "@fortawesome/free-solid-svg-icons";
+import { faCommentDots } from "@fortawesome/free-solid-svg-icons";
+import { faReply } from "@fortawesome/free-solid-svg-icons";
+import { faShare } from "@fortawesome/free-solid-svg-icons";
+import { faUserSlash } from "@fortawesome/free-solid-svg-icons";
+import { faHeadset } from "@fortawesome/free-solid-svg-icons";
+import { faCheck } from "@fortawesome/free-solid-svg-icons";
 const HowItWorks = () => {
   return (
     <div className={classes.howto_container}>
       <h1 className={classes.howto_title}>How to Use Evangadi Networks Q&A</h1>
 
       <section className={classes.howto_section}>
-        <h2>User Registration</h2>
+        <h2>
+          <FontAwesomeIcon icon={faUserPlus} /> User Registration
+        </h2>
         <p>
           To join Evangadi Networks Q&A, you need to create an account. Follow
           these steps:
         </p>
         <ul>
-          <li>Click on the "Sign In" button in the top-right corner.</li>
+          <li>
+            Click on the "Sign In" button in the top-right corner.
+          </li>
           <li>Switch to the "Create a new account" form.</li>
           <li>
             Fill in the required fields: Username, First Name, Last Name, Email,
@@ -28,7 +41,9 @@ const HowItWorks = () => {
       </section>
 
       <section className={classes.howto_section}>
-        <h2>User Login</h2>
+        <h2>
+          <FontAwesomeIcon icon={faKey} /> User Login
+        </h2>
         <p>Once you have registered, you can log in to your account:</p>
         <ul>
           <li>Click on the "Sign In" button in the top-right corner.</li>
@@ -38,7 +53,9 @@ const HowItWorks = () => {
       </section>
 
       <section className={classes.howto_section}>
-        <h2>Asking a Question</h2>
+        <h2>
+          <FontAwesomeIcon icon={faCircleQuestion} /> Asking a Question
+        </h2>
         <p>To ask a new question:</p>
         <ul>
           <li>
@@ -58,7 +75,9 @@ const HowItWorks = () => {
       </section>
 
       <section className={classes.howto_section}>
-        <h2>Viewing Questions and Answers</h2>
+        <h2>
+          <FontAwesomeIcon icon={faCommentDots} /> Viewing Questions and Answers
+        </h2>
         <p>To browse and view questions and their answers:</p>
         <ul>
           <li>Navigate to the Home page to see a list of recent questions.</li>
@@ -73,7 +92,9 @@ const HowItWorks = () => {
       </section>
 
       <section className={classes.howto_section}>
-        <h2>Submitting an Answer</h2>
+        <h2>
+          <FontAwesomeIcon icon={faShare} /> Submitting an Answer
+        </h2>
         <p>To answer a question:</p>
         <ul>
           <li>Navigate to the question you want to answer.</li>
@@ -85,7 +106,9 @@ const HowItWorks = () => {
       </section>
 
       <section className={classes.howto_section}>
-        <h2>Logging Out</h2>
+        <h2>
+          <FontAwesomeIcon icon={faUserSlash} /> Logging Out
+        </h2>
         <p>To securely log out of your account:</p>
         <ul>
           <li>
@@ -98,7 +121,9 @@ const HowItWorks = () => {
       </section>
 
       <section className={classes.howto_section}>
-        <h2>Support and Feedback</h2>
+        <h2>
+          <FontAwesomeIcon icon={faHeadset} /> Support and Feedback
+        </h2>
         <p>If you encounter any issues or have suggestions:</p>
         <ul>
           <li>Contact our support team through the "About" page.</li>
