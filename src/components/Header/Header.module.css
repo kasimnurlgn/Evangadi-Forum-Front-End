@@ -97,8 +97,7 @@
   cursor: pointer;
 }
 
-/* Media query for smaller screens */
-@media (max-width: 768px) {
+@media (max-width: 1070px) {
   .header__right {
     display: none;
   }
@@ -112,3 +111,5 @@
     flex-direction: column;
   }
 }
+
+
