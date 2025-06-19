@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import classes from "./Landing.module.css";
-import SignUp from "../../components/Signup/Signup";
+import SignUp from "../../components/Signup/bfdbfd"
 import Login from "../../components/Login/Login";
 import About from "../../components/About/About";
 function Landing() {
