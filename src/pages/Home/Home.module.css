@@ -64,3 +64,9 @@ div,
 .arrow_icon:hover {
   color: orange;
 }
+
+@media (max-width: 800px) {
+  .home__container {
+    width: 80%;
+  }
+}
