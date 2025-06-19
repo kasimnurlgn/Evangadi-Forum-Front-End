@@ -104,9 +104,9 @@ function Answer() {
             {answers.length > 0 ? (
               answers.map((answer, index) => (
                 <div className={classes.answer} key={answer.answer_id || index}>
-                  <div>
+                  <div className={classes.user_container}>
                     <IoMdContact size={80} />
-                    <h4 className={classes.username}>{answer.username}</h4>
+                    <h4>{answer.username}</h4>
                   </div>
                   <div className={classes.margin}>
                     <p>{answer.content}</p>

@@ -2,7 +2,6 @@ main {
   padding: 20px;
   max-width: 900px;
   margin: 20px auto;
- 
 }
 
 main h2,
@@ -21,7 +20,6 @@ p {
   margin-bottom: 10px;
 }
 
-
 .answer_form p {
   text-align: center;
   font-size: 20px;
@@ -32,7 +30,8 @@ p {
   margin-bottom: 10px;
 }
 
-.question_section h3, p {
+.question_section h3,
+p {
   font-size: 20px;
   color: #333;
 }
@@ -75,10 +74,6 @@ p {
   margin-right: 20px;
 }
 
-.answer p.username {
-  font-weight: bold;
-}
-
 .answer_form {
   margin-top: 20px;
 }
@@ -109,4 +104,11 @@ p {
 }
 .submit_btn:hover {
   background-color: orange;
+}
+.user_container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  font-weight: bold;
 }
